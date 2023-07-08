@@ -24,7 +24,7 @@ while (sumList < sum) {
         if (sumList < sum) {
             list.push(numberList);
             console.log(numberList);
-        } else if (sumList = sum) {
+        } else if (sumList === sum) {
             list.push(numberList);
             console.log(numberList);
             console.log("La somma dei valori che hai inserito da " + sumList);
