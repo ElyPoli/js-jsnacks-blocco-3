@@ -13,3 +13,8 @@
     --bs-btn-active-bg: #430b83;
     --bs-btn-active-border-color: #430b83;
 }
+
+.list-group-item {
+    background-color: transparent;
+    padding: .5rem;
+}
