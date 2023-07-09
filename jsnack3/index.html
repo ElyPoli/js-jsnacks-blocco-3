@@ -15,6 +15,22 @@
 </head>
 
 <body>
+    <main class="bg-primary vh-100 d-flex align-items-center justify-content-center">
+        <div class="container text-center text-white">
+            <h1 class="text-uppercase fw-bold m-0 pb-4">Generazione di liste:</h1>
+            <div class="pt-3">
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <label for="number" class="form-label fs-4 pe-3">Quante liste vuoi creare?</label>
+                    <input type="text" class="form-control w-25 number-of-list" id="number">
+                </div>
+                <button class="btn btn-primary mt-3 fs-5 mb-4 me-2 btn-create">Crea liste</button>
+                <button class="btn btn-primary mt-3 fs-5 mb-4 me-2 btn-reset">Reset</button>
+            </div>
+            <!-- Liste create -->
+            <div class="mt-4 list-create">
+            </div>
+        </div>
+    </main>
 
     <!-- Custom Js -->
     <script src="script.js"></script>
