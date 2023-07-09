@@ -4,37 +4,46 @@ Fai inserire un numero, che chiameremo N, all’utente. Genera N array, ognuno f
 */
 
 // Dichiaro variabili
-const numberUser = parseInt(prompt("Inserisci il numero di liste che vuoi creare"));
 let random;
 const numberAdd = 10;
 let z = 0;
+const btnCreate = document.querySelector(".btn-create");
+const btnReset = document.querySelector(".btn-reset");
+const numberUserElement = document.querySelector(".number-of-list");
+const listCreate = document.querySelector(".list-create");
 
-// Controllo valore inserito dall'utente
-if (numberUser <= 0 || isNaN(numberUser)) {
-    alert("Si è verificato un errore");
-    location.reload();
-}
+btnCreate.addEventListener("click", function () {
+    numberUser = parseInt(numberUserElement.value);
 
-console.log("Devo creare " + numberUser + " liste");
-
-// Genero il numero di liste chieste dall'utente
-for (let i = 1; i <= numberUser; i++) {
-    z = 0;
-    const listUser = [];
-
-    // Aggiungo ad ogni lista 10 numeri casuali
-    while (z < numberAdd) {
-        // Genero numeri casuali da 1 a 100
-        random = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-        console.log(random);
-
-        // Aggiungo ogni numero generato alla lista
-        listUser.push(random);
-
-        // Aumento z
-        z++;
+    // Controllo valore inserito dall'utente
+    if (numberUser <= 0 || isNaN(numberUser)) {
+        alert("Si è verificato un errore");
+        location.reload();
     }
 
-    // Stampo la lista generata
-    console.log("Ecco la " + i + " lista generata: " + listUser);
-}
+    // Genero il numero di liste chieste dall'utente
+    for (let i = 1; i <= numberUser; i++) {
+        z = 0;
+        const listUser = [];
+
+        // Aggiungo ad ogni lista 10 numeri casuali
+        while (z < numberAdd) {
+            // Genero numeri casuali da 1 a 100
+            random = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+
+            // Aggiungo ogni numero generato alla lista
+            listUser.push(random);
+
+            // Aumento z
+            z++;
+        }
+
+        // Stampo la lista generata
+        listCreate.innerHTML += `<p class="text-secondary fs-5 fw-bold">Ecco la ${i} lista generata ${listUser}</p>`;
+    }
+})
+
+// Pulsante reset
+btnReset.addEventListener("click", function () {
+    location.reload();
+})
